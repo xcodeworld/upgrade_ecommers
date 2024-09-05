@@ -8,16 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/.*",
-      "dest": "index.js"
-    },
-    {
       "src": "/(.*)",
       "dest": "index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/Frontend/index.html"
+      "dest": "/Frontend/build/index.html"
     },
     {
       "src": "/admin/(.*)",
