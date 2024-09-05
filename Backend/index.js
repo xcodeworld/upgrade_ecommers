@@ -21,11 +21,10 @@ const cors = require("cors");
 const path = require("path");
 dbConnect();
 app.use(morgan("dev"));
-app.use(cors());
+app.use(cors({ origin: 'https://upgrade-ecommers.vercel.app/', credentials: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use('/static', express.static(path.resolve(__dirname, 'Frontend', 'build', 'static')));
 app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "Frontend", "build", "index.html"));
