@@ -1,1 +1,1 @@
-export const base_url = "https://upgrade-ecommers.vercel.app/api/";
+export const base_url = `${window.location.origin}/api/`;
