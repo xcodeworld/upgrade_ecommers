@@ -10,23 +10,8 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/admin/(.*)",
-      "dest": "Admin/build/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "Frontend/build/index.html"
-    },
-    {
-      "src": "/build/*",
       "dest": "Frontend/build/:splat"
-    },
-    {
-      "src": "admin/build/*",
-      "dest": "Admin/build/:splat"
     }
+   
   ]
 }
