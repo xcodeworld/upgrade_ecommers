@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
+app.use(express.static(path.resolve(__dirname, "static")));
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "Frontend", "build", "index.html"));
 });
