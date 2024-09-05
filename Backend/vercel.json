@@ -9,7 +9,11 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/Frontend/index.html"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "/Admin/index.html"
     }
   ]
 }
