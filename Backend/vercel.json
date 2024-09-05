@@ -7,6 +7,21 @@
     }
   ],
   "routes": [
-    
+    {
+      "src": "/(.*)",
+      "dest": "/Frontend/index.html"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "/Admin/index.html"
+    },
+    {
+      "src": "/Frontend/build/*",
+      "dest": "Frontend/build/:splat"
+    },
+    {
+      "src": "/Admin/build/*",
+      "dest": "Admin/build/:splat"
+    }
   ]
 }
