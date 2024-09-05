@@ -11,19 +11,5 @@
       "source": "/(.*)",
       "destination": "/Frontend/index.html"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(*)",
-      "dest": "/Frontend/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.js"
-    },
-    {
-      "src": "/admin/(.*)",
-      "dest": "/Admin/index.html"
-    }
   ]
 }
