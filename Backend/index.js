@@ -18,13 +18,23 @@ const uploadRouter = require("./routes/uploadRoute");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const cors = require("cors");
-
+const path = require("path");
 dbConnect();
 app.use(morgan("dev"));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.get("/", (req, res) => {
+  app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
+  res.sendFile(path.resolve(__dirname, "Frontend", "build", "index.html"));
+});
+
+app.get("/admin", (req, res) => {
+  app.use(express.static(path.resolve(__dirname, "Admin", "build")));
+  res.sendFile(path.resolve(__dirname, "Admin", "build", "index.html"));
+});
+
 app.use("/api/user", authRouter);
 app.use("/api/product", productRouter);
 app.use("/api/blog", blogRouter);
