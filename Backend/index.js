@@ -25,6 +25,16 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "Frontend", "build", "index.html"));
+});
+
+app.use(express.static(path.resolve(__dirname, "Admin", "build")));
+app.get("/admin", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "Admin", "build", "index.html"));
+});
+
 app.use("/api/user", authRouter);
 app.use("/api/product", productRouter);
 app.use("/api/blog", blogRouter);
@@ -38,16 +48,6 @@ app.use("/api/upload", uploadRouter);
 
 app.use(notFound);
 app.use(errorHandler);
-
-app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "Frontend", "build", "index.html"));
-});
-
-app.use(express.static(path.resolve(__dirname, "Admin", "build")));
-app.get("/admin", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "Admin", "build", "index.html"));
-});
 app.listen(PORT, () => {
   console.log(`Server is running  at PORT ${PORT}`);
 });

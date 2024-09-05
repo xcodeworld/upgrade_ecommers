@@ -1,19 +1,32 @@
+
 {
   "version": 2,
   "builds": [
     {
-      "src": "*.js",
-      "use": "@vercel/node"
+      "src": "index.js",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/Frontend/index.html"
+      "dest": "index.js"
     },
     {
       "src": "/admin/(.*)",
-      "dest": "/Admin/index.html"
+      "dest": "Admin/build/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Frontend/build/index.html"
+    },
+    {
+      "src": "/build/*",
+      "dest": "Frontend/build/:splat"
+    },
+    {
+      "src": "admin/build/*",
+      "dest": "Admin/build/:splat"
     }
   ]
 }
