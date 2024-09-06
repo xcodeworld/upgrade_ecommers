@@ -14,8 +14,8 @@ npm install
 
 User -
 
-ID :
-Pass : 
+ID : user@account.com
+Pass :  user@account.com
 
 
 Admin 
