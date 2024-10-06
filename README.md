@@ -1,14 +1,9 @@
 This is mern stack Project for the Upgrade 
 Ecommers web site 
-
-Fronted : 
-npm install
-
-
+heere i used single file project for better deployment process so i dont need to run multiple project in same time meaning i just need to run Backed folder using `npm start`
 Backend : 
-
 npm install 
-
+npm start
 
 
 
@@ -19,6 +14,8 @@ Pass :  user@account.com
 
 
 Admin 
+----------------------------------
+url : /admin
 ID : malla@gmail.com
 Pass : malla@gmail.com 
 
