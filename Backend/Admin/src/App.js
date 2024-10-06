@@ -26,6 +26,9 @@ import ViewOrder from "./pages/ViewOrder";
 import { OpenRoutes } from "./routing/OpenRoutes";
 import { PrivateRoutes } from "./routing/PrivateRoutes";
 function App() {
+  console.error = () => {};
+  console.warn = () => {};
+  console.log = () => {};
   return (
     <Router>
       <Routes>

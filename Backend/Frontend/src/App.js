@@ -26,6 +26,9 @@ import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 
 function App() {
+  console.error = () => {};
+  console.warn = () => {};
+  console.log = () => {};
   return (
     <>
       <BrowserRouter>
